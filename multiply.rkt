@@ -1,19 +1,32 @@
 ;This program provides practice session for multiplication using speed mathematics skills. 
 #lang racket
+;variable for storing score
+(define score 0)
+(define lst  (list  '0))
+(define i 0)
 
-(define score 0) ;variable for storing score
-
-(for ([i (in-range  e)]) ;5 sets of no. will be printed
+;10 sets of no. will be printed
+(for ([i (in-range  1 6)]) 
+  ;random nos. within range of 1-100 will be generated
+  (define-values (p q) (values (random 1 100) (random 1 100)))
+  (set! lst (append lst (list p)(list q)))
   
-(define-values (p q) (values (random 1 100) (random 1 100))) ;random nos. within range of 1-100 will be generated
-
-
-  (printf "(~a) ~a * ~a \n"i p q) ;print the nos.
-  (define x (read))  ;gets answer from user and store it in the variable x
+  ;print the nos.
+  (printf "(~a) ~a * ~a \n"i p q)
+  ;gets answer from user and store it in the variable x
   
-  (cond [(equal? x (* p q )) (printf "true :) \n") +(set! score (add1 score))] ; checks for the correct answer and increment the value of 'score' if input ans is true  
-                              
-[else (printf "false :( \n")] ;if input answer is wrong then print false 
-)
+  (define x (read))
+  ; checks for the correct answer and increment the value of 'score' if input ans is true  
+  (cond [(equal? x (* p q )) (printf "true :) \n") +(set! score (add1 score))] 
+        ;if input answer is wrong then print false
+        [else (printf "false :( \n")]  
+        )
   )
 (printf "\n****  your score = ~a/5" score)  ;print your score
+
+(for ([i (in-range  1 12)])
+  (printf "~a * ~a \n "
+          (list-ref lst(+ i 1))
+          (list-ref lst(+ i 2))
+          )
+  )
