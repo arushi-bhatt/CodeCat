@@ -3,12 +3,12 @@
 
 (define score 0) ;variable for storing score
 
-(for ([i (in-range  e)]) ;5 sets of no. will be printed
+(for ([i '(1 2 3 4 5)]) ;5 sets of no. will be printed
   
-(define-values (p q) (values (random 1 100) (random 1 100))) ;random nos. within range of 1-100 will be generated
+(define p (random 90 100)) ;random nos. within range of 90-100 will be generated
+(define q (random 90 100))
 
-
-  (printf "(~a) ~a * ~a \n"i p q) ;print the nos.
+  (printf " ~a * ~a \n" p q) ;print the nos.
   (define x (read))  ;gets answer from user and store it in the variable x
   
   (cond [(equal? x (* p q )) (printf "true :) \n") +(set! score (add1 score))] ; checks for the correct answer and increment the value of 'score' if input ans is true  
