@@ -22,7 +22,9 @@
              (set! lst (append lst (list p)(list q)))
  );end of for
   
-
+(printf " \n Your time starts now !!!\n " )
+;note the starting time 
+(define start (current-seconds))
 ; now we will read the answers
 (for ([i (in-range  0 10)]) 
            (printf "(~a)"(+ i 1))
@@ -42,7 +44,8 @@
                 );end of cond
   ); end of for
 
-; now time for evaluation 
+; now time for evaluation
+(printf "\n    Time Taken = ~a sec\n"(- (current-seconds) start))
 (printf "\n    Score = ~a/10 \n" score)  
 (printf "\n        correct   = ~a \n" score )
 (printf "\n        incorrect = ~a  \n" (- 10 score))
