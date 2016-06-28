@@ -11,7 +11,7 @@
 (define wrng (list))
 
 (define i 0)
-
+(printf " Here is the list !! \n")
 ;10 sets of no. will be printed
 (for ([i (in-range  0 10)]) 
           ;random nos. within range of 1-100 will be generated
@@ -22,7 +22,7 @@
              (set! lst (append lst (list p)(list q)))
  );end of for
   
-(printf " \n Your time starts now !!!\n " )
+(printf " \n Your time starts now !!!\n" )
 ;note the starting time 
 (define start (current-seconds))
 ; now we will read the answers
@@ -47,8 +47,8 @@
 ; now time for evaluation
 (printf "\n    Time Taken = ~a sec\n"(- (current-seconds) start))
 (printf "\n    Score = ~a/10 \n" score)  
-(printf "\n        correct   = ~a \n" score )
-(printf "\n        incorrect = ~a  \n" (- 10 score))
+(printf "\n        Correct   = ~a \n" score )
+(printf "\n        Incorrect = ~a  \n" (- 10 score))
 
 
 ;Check if all the answers are correct
