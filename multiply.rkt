@@ -45,7 +45,7 @@
   ); end of for
 
 ; now time for evaluation
-(printf "\n    Time Taken = ~a sec\n"(- (current-seconds) start))
+(printf "\n\n   Time Taken = ~a sec\n"(- (current-seconds) start))
 (printf "\n    Score = ~a/10 \n" score)  
 (printf "\n        Correct   = ~a \n" score )
 (printf "\n        Incorrect = ~a  \n" (- 10 score))
