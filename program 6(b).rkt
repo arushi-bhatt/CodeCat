@@ -1,10 +1,10 @@
 ;This program provides practice session for multiplication using speed mathematics skills.
-;Program 6(a)
-;using decimal numbers
+;Program 6(b)
+;Multiplying numbers using decimal concept
 
 
 #lang racket
-(printf   "*(6(a))__________Multiplying decimal numbers__________* \n")
+(printf   "*(6(b))__________Multiplying numbers using decimal concept__________* \n")
 ;variable for storing score
 (define score 0)
 ;list for storing questions pairs
@@ -15,20 +15,11 @@
 (define wrng (list))
 
 (define i 0)
-(define-values (p q ) (values 0 0))
 (printf " Here is the list !! \n")
 ;10 sets of no. will be printed
 (for ([i (in-range  0 10)]) 
-        
- (define ran (random 1 11))
- (cond
-        [  (even? ran)    (set! p (/ (random 1 500) 100.0))  (set! q (/ (random 1 500) 100.0))]
-
-        [else
-                  (set! p (/ (random 1 500) 1000.0))  (set! q (/ (random 1 5) 1000.0))
-
-                        ]
-        )
+          ;random nos. within range of 1-30 will be generated
+             (define-values (p q) (values (random 1 11) (random 60 100)))
           ;print the nos.
              (printf "(~a) ~a * ~a \n"(+ i 1) p q)
           ;store the list of random pairs in list 'lst'

@@ -1,10 +1,10 @@
-;This program provides practice session for multiplication using speed mathematics skills.
-;Program 6(a)
-;using decimal numbers
+;This program provides practice session for addition using speed mathematics skills.
+;Program 8(a)
+;Addition of 2-digits and 3-digits numbers 
 
 
 #lang racket
-(printf   "*(6(a))__________Multiplying decimal numbers__________* \n")
+(printf   "*(8(a))__________Addition of 2 digits and 3 digits numbers__________* \n")
 ;variable for storing score
 (define score 0)
 ;list for storing questions pairs
@@ -19,18 +19,17 @@
 (printf " Here is the list !! \n")
 ;10 sets of no. will be printed
 (for ([i (in-range  0 10)]) 
-        
+          
  (define ran (random 1 11))
  (cond
-        [  (even? ran)    (set! p (/ (random 1 500) 100.0))  (set! q (/ (random 1 500) 100.0))]
+        [  (even? ran)    (set! p (random 1 100)) (set! q (random 1 100))]
 
         [else
-                  (set! p (/ (random 1 500) 1000.0))  (set! q (/ (random 1 5) 1000.0))
-
-                        ]
+                  (set! p (random 100 1000))  (set! q (random 100 1000))
+         ]
         )
           ;print the nos.
-             (printf "(~a) ~a * ~a \n"(+ i 1) p q)
+             (printf "(~a) ~a + ~a \n"(+ i 1) p q)
           ;store the list of random pairs in list 'lst'
              (set! lst (append lst (list p)(list q)))
  );end of for
@@ -47,7 +46,7 @@
            ;add it to the list ans
                (set! ans (append ans (list x)))
           ; check for the correct answer and increment the value of 'score' if input ans is true  
-                (cond [(equal? x (*(list-ref lst (* i 2)) (list-ref lst (+ (* i 2) 1)) ))
+                (cond [(equal? x (+ (list-ref lst (* i 2)) (list-ref lst (+ (* i 2) 1)) ))
                        (set! score (add1 score))
                       ] 
           ;if input answer is wrong then print false
@@ -71,11 +70,11 @@
 ;if incorrect answers != 0 , then print the correct answer
              [else
                   (for ([i (in-range  0 (length wrng) )])
-                            (printf "\n                (~a)    ~a * ~a  = ~a  ||  ~a   \n "
+                            (printf "\n                (~a)    ~a + ~a  = ~a  ||  ~a   \n "
                                                        (+(/(list-ref wrng i)2)1 )
                                                        (list-ref lst (list-ref wrng i ) )
                                                        (list-ref lst(+(list-ref wrng i ) 1))
-                                                       (*(list-ref lst (list-ref wrng i ))
+                                                       (+ (list-ref lst (list-ref wrng i ))
                                                              (list-ref lst(+ (list-ref wrng i ) 1)) )
                                                         (list-ref ans(/(list-ref wrng i )2))
                              );end of printf

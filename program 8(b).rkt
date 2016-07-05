@@ -1,10 +1,10 @@
-;This program provides practice session for multiplication using speed mathematics skills.
-;Program 6(a)
-;using decimal numbers
+;This program provides practice session for  addition using speed mathematics skills.
+;Program 8(b)
+;addition of money
 
 
 #lang racket
-(printf   "*(6(a))__________Multiplying decimal numbers__________* \n")
+(printf   "*(8(b))__________Addition of MONEY__________* \n")
 ;variable for storing score
 (define score 0)
 ;list for storing questions pairs
